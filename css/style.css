@@ -436,8 +436,6 @@ h3 {
 }
 .offer__description {
   color: #5F5F5F;
-  margin-top: 25px;
-  margin-bottom: 45px;
   line-height: 150%;
 }
 @media (max-width: 1600px) and (max-width: 767px) {
@@ -453,6 +451,26 @@ h3 {
 @media (min-width: 1600px) {
   .offer__description {
     font-size: 20px;
+  }
+}
+@media (max-width: 1600px) {
+  .offer__description {
+    margin-top: calc(15px + 10 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .offer__description {
+    margin-top: 25px;
+  }
+}
+@media (max-width: 1600px) {
+  .offer__description {
+    margin-bottom: calc(20px + 25 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .offer__description {
+    margin-bottom: 45px;
   }
 }
 .offer__image {
@@ -494,15 +512,16 @@ h3 {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+@media (max-width: 520px) {
+  .offer__btn:first-child {
+    margin-bottom: 25px;
+    margin-right: 0;
+  }
+}
 .offer__btn:last-child {
   border: 1px solid #DBDBDB;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-}
-@media (max-width: 520px) {
-  .offer__btn:last-child {
-    margin-top: 25px;
-  }
 }
 .offer__btn:last-child:hover {
   -webkit-transition: 0.2s;
