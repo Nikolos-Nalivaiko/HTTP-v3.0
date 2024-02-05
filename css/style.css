@@ -138,9 +138,23 @@ h1 {
 }
 
 h2 {
-  font-size: 48px;
   font-weight: 700;
   line-height: 150%;
+}
+@media (max-width: 1600px) and (max-width: 767px) {
+  h2 {
+    font-size: calc(32px + 32.7 * (100vw - 320px) / 1600);
+  }
+}
+@media (max-width: 1600px) and (min-width: 767px) {
+  h2 {
+    font-size: calc(32px + 16 * 100vw / 1600);
+  }
+}
+@media (min-width: 1600px) {
+  h2 {
+    font-size: 48px;
+  }
 }
 
 h3 {
@@ -296,6 +310,7 @@ h3 {
   border: 1px solid #5BB318;
   color: #5BB318;
   border-radius: 10px;
+  font-weight: 600;
   padding: 14px 45px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -974,19 +989,85 @@ h3 {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+@media (max-width: 768px) {
+  .sign-in {
+    padding-right: 20px;
+  }
+}
 .sign-in__form {
   margin-top: 45px;
+}
+.sign-in__image {
+  background: url(../img/sign-in.svg);
+  height: 584px;
+  background-repeat: no-repeat;
+}
+@media (max-width: 1600px) {
+  .sign-in__image {
+    width: calc(180px + 500 * (100vw - 768px) / (1600 - 768));
+  }
+}
+@media (min-width: 1600px) {
+  .sign-in__image {
+    width: 680px;
+  }
+}
+@media (max-width: 768px) {
+  .sign-in__image {
+    display: none;
+  }
 }
 
 .input {
   border-bottom: 1px solid #DBDBDB;
-  padding-left: 80px;
-  padding-right: 35px;
-  padding-bottom: 15px;
   font-weight: 700;
-  font-size: 20px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+@media (max-width: 1600px) {
+  .input {
+    padding-left: calc(60px + 20 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .input {
+    padding-left: 80px;
+  }
+}
+@media (max-width: 1600px) {
+  .input {
+    padding-right: calc(15px + 20 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .input {
+    padding-right: 35px;
+  }
+}
+@media (max-width: 1600px) {
+  .input {
+    padding-bottom: calc(10px + 5 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .input {
+    padding-bottom: 15px;
+  }
+}
+@media (max-width: 1600px) and (max-width: 767px) {
+  .input {
+    font-size: calc(16px + 8.7 * (100vw - 320px) / 1600);
+  }
+}
+@media (max-width: 1600px) and (min-width: 767px) {
+  .input {
+    font-size: calc(16px + 4 * 100vw / 1600);
+  }
+}
+@media (min-width: 1600px) {
+  .input {
+    font-size: 20px;
+  }
 }
 .input__option {
   font-size: 16px;
@@ -1005,10 +1086,43 @@ h3 {
 }
 .input__label {
   color: #C8C8C8;
-  margin-bottom: 8px;
-  padding-left: 80px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+@media (max-width: 1600px) and (max-width: 767px) {
+  .input__label {
+    font-size: calc(14px + 4.7 * (100vw - 320px) / 1600);
+  }
+}
+@media (max-width: 1600px) and (min-width: 767px) {
+  .input__label {
+    font-size: calc(14px + 2 * 100vw / 1600);
+  }
+}
+@media (min-width: 1600px) {
+  .input__label {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1600px) {
+  .input__label {
+    margin-bottom: calc(5px + 3 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .input__label {
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 1600px) {
+  .input__label {
+    padding-left: calc(60px + 20 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .input__label {
+    padding-left: 80px;
+  }
 }
 .input__wrapper {
   display: -webkit-box;
@@ -1025,8 +1139,15 @@ h3 {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-.input__wrapper-sign-in {
-  margin-bottom: 45px;
+@media (max-width: 1600px) {
+  .input__wrapper-sign-in {
+    margin-bottom: calc(40px + 5 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .input__wrapper-sign-in {
+    margin-bottom: 45px;
+  }
 }
 .input__wrapper--full-field {
   grid-column: span 2;
@@ -1034,25 +1155,62 @@ h3 {
 .input__icon {
   position: absolute;
   left: 0;
-  font-size: 35px;
   color: #5F5F5F;
   top: 35%;
   -webkit-transform: translateY(-35%);
       -ms-transform: translateY(-35%);
           transform: translateY(-35%);
   border-right: 1px solid #DBDBDB;
-  padding-right: 20px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+@media (max-width: 1600px) and (max-width: 767px) {
+  .input__icon {
+    font-size: calc(30px + 10.7 * (100vw - 320px) / 1600);
+  }
+}
+@media (max-width: 1600px) and (min-width: 767px) {
+  .input__icon {
+    font-size: calc(30px + 5 * 100vw / 1600);
+  }
+}
+@media (min-width: 1600px) {
+  .input__icon {
+    font-size: 35px;
+  }
+}
+@media (max-width: 1600px) {
+  .input__icon {
+    padding-right: calc(15px + 5 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .input__icon {
+    padding-right: 20px;
+  }
 }
 .input__icon-visible {
   position: absolute;
   right: 0;
   color: #C8C8C8;
-  font-size: 25px;
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+@media (max-width: 1600px) and (max-width: 767px) {
+  .input__icon-visible {
+    font-size: calc(18px + 14.7 * (100vw - 320px) / 1600);
+  }
+}
+@media (max-width: 1600px) and (min-width: 767px) {
+  .input__icon-visible {
+    font-size: calc(18px + 7 * 100vw / 1600);
+  }
+}
+@media (min-width: 1600px) {
+  .input__icon-visible {
+    font-size: 25px;
+  }
 }
 .input__icon-visible:hover {
   color: #5BB318;
@@ -1061,6 +1219,11 @@ h3 {
 }
 .input__sign-in {
   width: 495px;
+}
+@media (max-width: 768px) {
+  .input__sign-in {
+    width: 100%;
+  }
 }
 .input:focus {
   border-color: #5BB318;
@@ -1081,9 +1244,18 @@ h3 {
   border: 1px solid #DBDBDB;
   color: #101722;
   background: #fff;
-  margin-top: 30px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+@media (max-width: 1600px) {
+  .input__btn-recover {
+    margin-top: calc(25px + 5 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .input__btn-recover {
+    margin-top: 30px;
+  }
 }
 .input__btn-recover:hover {
   color: #fff;
@@ -1094,8 +1266,17 @@ h3 {
 }
 .input__descrition-sign-in {
   text-align: center;
-  margin-top: 30px;
   color: #5F5F5F;
+}
+@media (max-width: 1600px) {
+  .input__descrition-sign-in {
+    margin-top: calc(25px + 5 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .input__descrition-sign-in {
+    margin-top: 30px;
+  }
 }
 .input__descrition-sign-in a {
   font-weight: 600;
