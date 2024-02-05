@@ -22,7 +22,7 @@
 
         <header class="header">
             <div class="__container header__wrapper">
-                <img src="img/logo.svg" class="navbar__logo">
+                <a href=""><img class="navbar__logo" src="img/logo.svg"></a>
                 <nav class="navbar">
                     <ul class="navbar__list">
                         <li class="navbar__item"><a href="">Головна</a></li>
@@ -114,7 +114,7 @@
 
             </section>
 
-            <!-- <section class="main__section __container">
+            <section class="main__section __container">
                 <h3>Для кого підходить</h3>
                 <p class="main__subheadline">Наша платформа - це універсальний інструмент для всіх, хто цінує зручність
                     та ефективність</p>
@@ -144,9 +144,9 @@
                         </div>
                     </div>
                 </div>
-            </section> -->
+            </section>
 
-            <!-- <section class="main__section __container reviews">
+            <section class="main__section __container reviews">
                 <div class="reviews__head">
                     <div class="reviews__head-text">
                         <h3>Відгуки про платформу</h3>
@@ -156,8 +156,8 @@
                     </div>
 
                     <div class="reviews__arrows">
-                        <p class="reviews__arrow __icon-left_arr"></p>
-                        <p class="reviews__arrow __icon-right_arr"></p>
+                        <p class="reviews__arrow __icon-left_arr __prev"></p>
+                        <p class="reviews__arrow __icon-right_arr __next"></p>
                     </div>
                 </div>
 
@@ -204,15 +204,55 @@
                                 роблять цю платформу незамінною для наших потреб. </p>
                         </div>
 
+                        <div class="reviews__block">
+                            <div class="reviews__block-head">
+                                <img src="../img/user.jpg" class="reviews__image">
+                                <div class="reviews__stars">
+                                    <p class="reviews__star reviews__star--active __icon-star"></p>
+                                    <p class="reviews__star reviews__star--active __icon-star"></p>
+                                    <p class="reviews__star reviews__star--active __icon-star"></p>
+                                    <p class="reviews__star reviews__star--active __icon-star"></p>
+                                    <p class="reviews__star __icon-star"></p>
+                                </div>
+                            </div>
+                            <p class="reviews__headline">ТОВ “ЛогіСмарт”</p>
+                            <p class="reviews__description">Підприємство</p>
+                            <p class="reviews__review">Наша компанія з великим задоволенням використовує логічну
+                                платформу для організації перевезень. Цей інноваційний інструмент дозволяє нам ефективно
+                                керувати нашим транспортним парком та знаходити оптимальні маршрути для доставки
+                                вантажів. Легка навігація, надійність та зручність взаємодії з іншими учасниками ринку
+                                роблять цю платформу незамінною для наших потреб. </p>
+                        </div>
+
+                        <div class="reviews__block">
+                            <div class="reviews__block-head">
+                                <img src="../img/user.jpg" class="reviews__image">
+                                <div class="reviews__stars">
+                                    <p class="reviews__star reviews__star--active __icon-star"></p>
+                                    <p class="reviews__star reviews__star--active __icon-star"></p>
+                                    <p class="reviews__star reviews__star--active __icon-star"></p>
+                                    <p class="reviews__star reviews__star--active __icon-star"></p>
+                                    <p class="reviews__star __icon-star"></p>
+                                </div>
+                            </div>
+                            <p class="reviews__headline">ТОВ “ЛогіСмарт”</p>
+                            <p class="reviews__description">Підприємство</p>
+                            <p class="reviews__review">Наша компанія з великим задоволенням використовує логічну
+                                платформу для організації перевезень. Цей інноваційний інструмент дозволяє нам ефективно
+                                керувати нашим транспортним парком та знаходити оптимальні маршрути для доставки
+                                вантажів. Легка навігація, надійність та зручність взаємодії з іншими учасниками ринку
+                                роблять цю платформу незамінною для наших потреб. </p>
+                        </div>
+
                     </div>
                 </div>
-            </section> -->
+            </section>
         </main>
 
-        <!-- <footer class="footer">
+        <footer class="footer">
             <div class="footer__wrapper __container">
                 <div class="footer__left">
-                    <a href="" class="navbar__logo"><img src="img/logo.svg"></a>
+                    <a href=""><img class="navbar__logo" src="img/logo.svg"></a>
                     <p class="footer__copyright">2024 © HTTP-Logistic Service</p>
                 </div>
 
@@ -236,10 +276,25 @@
                     </ul>
                 </div>
             </div>
-        </footer> -->
+        </footer>
     </div>
     <script type="text/javascript" src="js/script.js"></script>
     <script>
+    const Slider = new slider(
+        $('.reviews__track'),
+        $('.reviews__slider'),
+        $('.__prev'),
+        $('.__next'),
+        $('.reviews__block'),
+        2,
+        1,
+        30,
+        [{
+            width: '768',
+            count: '1'
+        }, ],
+        $('.reviews__track')
+    );
     loading();
     </script>
 </body>
