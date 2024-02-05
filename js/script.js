@@ -82,7 +82,7 @@ function UploadImage() {
 
 class slider {
 
-    constructor(track, container, prevBtn, nextBtn, item, SlideToShow, SlideToScroll, margin, adaptives) {
+    constructor(track, container, prevBtn, nextBtn, item, SlideToShow, SlideToScroll, margin, adaptives, swipeArea) {
         this.track = track;
         this.container = container;
         this.prevBtn = prevBtn;
@@ -95,6 +95,7 @@ class slider {
         this.CountItems = item.length;
         this.counter = this.SlideToShow;
         this.counterSum = this.CountItems;
+        this.swipeArea = swipeArea;
 
         this.adaptiveDiapason(adaptives);
         this.setWidth();
@@ -161,11 +162,11 @@ class slider {
     }
 
     swipe() {
-        $('.profile__slider-nav').on('touchstart', (event) => {
+        this.swipeArea.on('touchstart', (event) => {
             this.touchStartX = event.originalEvent.touches[0].pageX;
         });
 
-        $('.profile__slider-nav').on('touchend', (event) => {
+        this.swipeArea.on('touchend', (event) => {
             this.touchEndX = event.originalEvent.changedTouches[0].pageX;
             this.touchSum = this.touchStartX - this.touchEndX;
 
