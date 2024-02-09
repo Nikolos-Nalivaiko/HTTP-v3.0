@@ -121,6 +121,11 @@ select {
   min-height: 100%;
 }
 
+input[type=date] {
+  width: 100%;
+  background-color: transparent;
+}
+
 h1 {
   font-weight: 700;
   line-height: 150%;
