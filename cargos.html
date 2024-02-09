@@ -11,6 +11,13 @@
 </head>
 
 <body>
+
+    <div class="load-page">
+        <div class="load-page__body">
+            <div class="loader"></div>
+        </div>
+    </div>
+
     <div class="wrapper">
 
         <header class="header">
@@ -54,10 +61,13 @@
             <section class="cargos main__section-page __container">
                 <div class="exchange__header">
                     <h2>Біржа вантажів</h2>
-                    <a href="" class="exchange__btn">Додати вантаж</a>
+                    <div class="exchange__header-btns">
+                        <a href="" class="exchange__btn">Додати вантаж</a>
+                        <p class="filter__btn-setting __icon-filter"></p>
+                    </div>
                 </div>
 
-                <form action="" method="post" class="filter__form">
+                <!-- <form action="" method="post" class="filter__form">
                     <div class="filter__form-header">
                         <div class="filter__input-wrapper">
                             <label for="" class="filter__label">Область завантаження</label>
@@ -104,12 +114,9 @@
                         </div>
                     </div>
 
-                    <div class="filter__btns">
-                        <p class="filter__btn __icon-filter"></p>
-                        <p class="filter__btn __icon-loop"></p>
-                    </div>
-                </form>
-
+                    <p class="filter__btn __icon-loop"></p>
+                </form> -->
+                
                 <div class="cargos__content">
                     <a href="cargo.php" class="cargos__block">
                         <div class="cargos__block-head">
@@ -122,50 +129,45 @@
                         </div>
                         <div class="cargos__block-middle">
 
-                            <div class="cargos__decor">
-                                <div class="cargos__decor-circle"></div>
-                                <div class="cargos__decor-line"></div>
-                                <div class="cargos__decor-circle"></div>
+                            <div class="cargos__block-middle-wrap">
+    
+                                <div class="cargos__decor">
+                                    <div class="cargos__decor-circle"></div>
+                                    <div class="cargos__decor-line"></div>
+                                    <div class="cargos__decor-circle"></div>
+                                </div>
+
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">Кременчук</p>
+                                    <p class="cargos__block-text-subtitle">Полтавська область</p>
+                                </div>
+    
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">Дніпро</p>
+                                    <p class="cargos__block-text-subtitle">Дніпропетровська область</p>
+                                </div>
                             </div>
 
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">Кременчук</p>
-                                <p class="cargos__block-text-subtitle">Полтавська область</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">06.01.2024</p>
-                                <p class="cargos__block-text-subtitle">Дата завантаження</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">Дніпро</p>
-                                <p class="cargos__block-text-subtitle">Дніпропетровська область</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">16.01.2024</p>
-                                <p class="cargos__block-text-subtitle">Дата розвантаження</p>
+                            <div class="cargos__block-middle-wrap">
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">06.01.2024</p>
+                                    <p class="cargos__block-text-subtitle">Дата завантаження</p>
+                                </div>
+    
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">16.01.2024</p>
+                                    <p class="cargos__block-text-subtitle">Дата розвантаження</p>
+                                </div>
                             </div>
 
                         </div>
 
                         <div class="cargos__block-footer">
-                            <div class="cargos__block-info">
-                                <ul class="cargos__block-info-list">
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">20 т.</p>
-                                        <div class="cargos__block-info-circle"></div>
-                                    </li>
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">Тентований</p>
-                                        <div class="cargos__block-info-circle"></div>
-                                    </li>
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">Готівка</p>
-                                    </li>
+                                <ul class="cargos__block-info">
+                                    <li class="cargos__block-info-item">20 т.</li>
+                                    <li class="cargos__block-info-item">Тентований</li>
+                                    <li class="cargos__block-info-item">Готівка</li>
                                 </ul>
-                            </div>
                             <div class="cargos__block-price">
                                 <p class="cargos__block-price-title">25000₴</p>
                                 <p class="cargos__block-price-subtitle">20,8₴ / км.</p>
@@ -173,7 +175,7 @@
                         </div>
                     </a>
 
-                    <a href="" class="cargos__block">
+                    <a href="cargo.php" class="cargos__block">
                         <div class="cargos__block-head">
                             <p class="cargos__block-headline">Сонячні панелі</p>
 
@@ -184,50 +186,45 @@
                         </div>
                         <div class="cargos__block-middle">
 
-                            <div class="cargos__decor">
-                                <div class="cargos__decor-circle"></div>
-                                <div class="cargos__decor-line"></div>
-                                <div class="cargos__decor-circle"></div>
+                            <div class="cargos__block-middle-wrap">
+    
+                                <div class="cargos__decor">
+                                    <div class="cargos__decor-circle"></div>
+                                    <div class="cargos__decor-line"></div>
+                                    <div class="cargos__decor-circle"></div>
+                                </div>
+
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">Кременчук</p>
+                                    <p class="cargos__block-text-subtitle">Полтавська область</p>
+                                </div>
+    
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">Дніпро</p>
+                                    <p class="cargos__block-text-subtitle">Дніпропетровська область</p>
+                                </div>
                             </div>
 
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">Кременчук</p>
-                                <p class="cargos__block-text-subtitle">Полтавська область</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">06.01.2024</p>
-                                <p class="cargos__block-text-subtitle">Дата завантаження</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">Дніпро</p>
-                                <p class="cargos__block-text-subtitle">Дніпропетровська область</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">16.01.2024</p>
-                                <p class="cargos__block-text-subtitle">Дата розвантаження</p>
+                            <div class="cargos__block-middle-wrap">
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">06.01.2024</p>
+                                    <p class="cargos__block-text-subtitle">Дата завантаження</p>
+                                </div>
+    
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">16.01.2024</p>
+                                    <p class="cargos__block-text-subtitle">Дата розвантаження</p>
+                                </div>
                             </div>
 
                         </div>
 
                         <div class="cargos__block-footer">
-                            <div class="cargos__block-info">
-                                <ul class="cargos__block-info-list">
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">20 т.</p>
-                                        <div class="cargos__block-info-circle"></div>
-                                    </li>
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">Тентований</p>
-                                        <div class="cargos__block-info-circle"></div>
-                                    </li>
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">Готівка</p>
-                                    </li>
+                                <ul class="cargos__block-info">
+                                    <li class="cargos__block-info-item">20 т.</li>
+                                    <li class="cargos__block-info-item">Тентований</li>
+                                    <li class="cargos__block-info-item">Готівка</li>
                                 </ul>
-                            </div>
                             <div class="cargos__block-price">
                                 <p class="cargos__block-price-title">25000₴</p>
                                 <p class="cargos__block-price-subtitle">20,8₴ / км.</p>
@@ -235,7 +232,7 @@
                         </div>
                     </a>
 
-                    <a href="" class="cargos__block">
+                    <a href="cargo.php" class="cargos__block">
                         <div class="cargos__block-head">
                             <p class="cargos__block-headline">Сонячні панелі</p>
 
@@ -246,50 +243,45 @@
                         </div>
                         <div class="cargos__block-middle">
 
-                            <div class="cargos__decor">
-                                <div class="cargos__decor-circle"></div>
-                                <div class="cargos__decor-line"></div>
-                                <div class="cargos__decor-circle"></div>
+                            <div class="cargos__block-middle-wrap">
+    
+                                <div class="cargos__decor">
+                                    <div class="cargos__decor-circle"></div>
+                                    <div class="cargos__decor-line"></div>
+                                    <div class="cargos__decor-circle"></div>
+                                </div>
+
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">Кременчук</p>
+                                    <p class="cargos__block-text-subtitle">Полтавська область</p>
+                                </div>
+    
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">Дніпро</p>
+                                    <p class="cargos__block-text-subtitle">Дніпропетровська область</p>
+                                </div>
                             </div>
 
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">Кременчук</p>
-                                <p class="cargos__block-text-subtitle">Полтавська область</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">06.01.2024</p>
-                                <p class="cargos__block-text-subtitle">Дата завантаження</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">Дніпро</p>
-                                <p class="cargos__block-text-subtitle">Дніпропетровська область</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">16.01.2024</p>
-                                <p class="cargos__block-text-subtitle">Дата розвантаження</p>
+                            <div class="cargos__block-middle-wrap">
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">06.01.2024</p>
+                                    <p class="cargos__block-text-subtitle">Дата завантаження</p>
+                                </div>
+    
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">16.01.2024</p>
+                                    <p class="cargos__block-text-subtitle">Дата розвантаження</p>
+                                </div>
                             </div>
 
                         </div>
 
                         <div class="cargos__block-footer">
-                            <div class="cargos__block-info">
-                                <ul class="cargos__block-info-list">
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">20 т.</p>
-                                        <div class="cargos__block-info-circle"></div>
-                                    </li>
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">Тентований</p>
-                                        <div class="cargos__block-info-circle"></div>
-                                    </li>
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">Готівка</p>
-                                    </li>
+                                <ul class="cargos__block-info">
+                                    <li class="cargos__block-info-item">20 т.</li>
+                                    <li class="cargos__block-info-item">Тентований</li>
+                                    <li class="cargos__block-info-item">Готівка</li>
                                 </ul>
-                            </div>
                             <div class="cargos__block-price">
                                 <p class="cargos__block-price-title">25000₴</p>
                                 <p class="cargos__block-price-subtitle">20,8₴ / км.</p>
@@ -297,7 +289,7 @@
                         </div>
                     </a>
 
-                    <a href="" class="cargos__block">
+                    <a href="cargo.php" class="cargos__block">
                         <div class="cargos__block-head">
                             <p class="cargos__block-headline">Сонячні панелі</p>
 
@@ -308,50 +300,45 @@
                         </div>
                         <div class="cargos__block-middle">
 
-                            <div class="cargos__decor">
-                                <div class="cargos__decor-circle"></div>
-                                <div class="cargos__decor-line"></div>
-                                <div class="cargos__decor-circle"></div>
+                            <div class="cargos__block-middle-wrap">
+    
+                                <div class="cargos__decor">
+                                    <div class="cargos__decor-circle"></div>
+                                    <div class="cargos__decor-line"></div>
+                                    <div class="cargos__decor-circle"></div>
+                                </div>
+
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">Кременчук</p>
+                                    <p class="cargos__block-text-subtitle">Полтавська область</p>
+                                </div>
+    
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">Дніпро</p>
+                                    <p class="cargos__block-text-subtitle">Дніпропетровська область</p>
+                                </div>
                             </div>
 
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">Кременчук</p>
-                                <p class="cargos__block-text-subtitle">Полтавська область</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">06.01.2024</p>
-                                <p class="cargos__block-text-subtitle">Дата завантаження</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">Дніпро</p>
-                                <p class="cargos__block-text-subtitle">Дніпропетровська область</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">16.01.2024</p>
-                                <p class="cargos__block-text-subtitle">Дата розвантаження</p>
+                            <div class="cargos__block-middle-wrap">
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">06.01.2024</p>
+                                    <p class="cargos__block-text-subtitle">Дата завантаження</p>
+                                </div>
+    
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">16.01.2024</p>
+                                    <p class="cargos__block-text-subtitle">Дата розвантаження</p>
+                                </div>
                             </div>
 
                         </div>
 
                         <div class="cargos__block-footer">
-                            <div class="cargos__block-info">
-                                <ul class="cargos__block-info-list">
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">20 т.</p>
-                                        <div class="cargos__block-info-circle"></div>
-                                    </li>
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">Тентований</p>
-                                        <div class="cargos__block-info-circle"></div>
-                                    </li>
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">Готівка</p>
-                                    </li>
+                                <ul class="cargos__block-info">
+                                    <li class="cargos__block-info-item">20 т.</li>
+                                    <li class="cargos__block-info-item">Тентований</li>
+                                    <li class="cargos__block-info-item">Готівка</li>
                                 </ul>
-                            </div>
                             <div class="cargos__block-price">
                                 <p class="cargos__block-price-title">25000₴</p>
                                 <p class="cargos__block-price-subtitle">20,8₴ / км.</p>
@@ -359,7 +346,7 @@
                         </div>
                     </a>
 
-                    <a href="" class="cargos__block">
+                    <a href="cargo.php" class="cargos__block">
                         <div class="cargos__block-head">
                             <p class="cargos__block-headline">Сонячні панелі</p>
 
@@ -370,50 +357,45 @@
                         </div>
                         <div class="cargos__block-middle">
 
-                            <div class="cargos__decor">
-                                <div class="cargos__decor-circle"></div>
-                                <div class="cargos__decor-line"></div>
-                                <div class="cargos__decor-circle"></div>
+                            <div class="cargos__block-middle-wrap">
+    
+                                <div class="cargos__decor">
+                                    <div class="cargos__decor-circle"></div>
+                                    <div class="cargos__decor-line"></div>
+                                    <div class="cargos__decor-circle"></div>
+                                </div>
+
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">Кременчук</p>
+                                    <p class="cargos__block-text-subtitle">Полтавська область</p>
+                                </div>
+    
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">Дніпро</p>
+                                    <p class="cargos__block-text-subtitle">Дніпропетровська область</p>
+                                </div>
                             </div>
 
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">Кременчук</p>
-                                <p class="cargos__block-text-subtitle">Полтавська область</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">06.01.2024</p>
-                                <p class="cargos__block-text-subtitle">Дата завантаження</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">Дніпро</p>
-                                <p class="cargos__block-text-subtitle">Дніпропетровська область</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">16.01.2024</p>
-                                <p class="cargos__block-text-subtitle">Дата розвантаження</p>
+                            <div class="cargos__block-middle-wrap">
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">06.01.2024</p>
+                                    <p class="cargos__block-text-subtitle">Дата завантаження</p>
+                                </div>
+    
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">16.01.2024</p>
+                                    <p class="cargos__block-text-subtitle">Дата розвантаження</p>
+                                </div>
                             </div>
 
                         </div>
 
                         <div class="cargos__block-footer">
-                            <div class="cargos__block-info">
-                                <ul class="cargos__block-info-list">
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">20 т.</p>
-                                        <div class="cargos__block-info-circle"></div>
-                                    </li>
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">Тентований</p>
-                                        <div class="cargos__block-info-circle"></div>
-                                    </li>
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">Готівка</p>
-                                    </li>
+                                <ul class="cargos__block-info">
+                                    <li class="cargos__block-info-item">20 т.</li>
+                                    <li class="cargos__block-info-item">Тентований</li>
+                                    <li class="cargos__block-info-item">Готівка</li>
                                 </ul>
-                            </div>
                             <div class="cargos__block-price">
                                 <p class="cargos__block-price-title">25000₴</p>
                                 <p class="cargos__block-price-subtitle">20,8₴ / км.</p>
@@ -421,7 +403,7 @@
                         </div>
                     </a>
 
-                    <a href="" class="cargos__block">
+                    <a href="cargo.php" class="cargos__block">
                         <div class="cargos__block-head">
                             <p class="cargos__block-headline">Сонячні панелі</p>
 
@@ -432,50 +414,45 @@
                         </div>
                         <div class="cargos__block-middle">
 
-                            <div class="cargos__decor">
-                                <div class="cargos__decor-circle"></div>
-                                <div class="cargos__decor-line"></div>
-                                <div class="cargos__decor-circle"></div>
+                            <div class="cargos__block-middle-wrap">
+    
+                                <div class="cargos__decor">
+                                    <div class="cargos__decor-circle"></div>
+                                    <div class="cargos__decor-line"></div>
+                                    <div class="cargos__decor-circle"></div>
+                                </div>
+
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">Кременчук</p>
+                                    <p class="cargos__block-text-subtitle">Полтавська область</p>
+                                </div>
+    
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">Дніпро</p>
+                                    <p class="cargos__block-text-subtitle">Дніпропетровська область</p>
+                                </div>
                             </div>
 
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">Кременчук</p>
-                                <p class="cargos__block-text-subtitle">Полтавська область</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">06.01.2024</p>
-                                <p class="cargos__block-text-subtitle">Дата завантаження</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">Дніпро</p>
-                                <p class="cargos__block-text-subtitle">Дніпропетровська область</p>
-                            </div>
-
-                            <div class="cargos__block-text">
-                                <p class="cargos__block-text-title">16.01.2024</p>
-                                <p class="cargos__block-text-subtitle">Дата розвантаження</p>
+                            <div class="cargos__block-middle-wrap">
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">06.01.2024</p>
+                                    <p class="cargos__block-text-subtitle">Дата завантаження</p>
+                                </div>
+    
+                                <div class="cargos__block-text">
+                                    <p class="cargos__block-text-title">16.01.2024</p>
+                                    <p class="cargos__block-text-subtitle">Дата розвантаження</p>
+                                </div>
                             </div>
 
                         </div>
 
                         <div class="cargos__block-footer">
-                            <div class="cargos__block-info">
-                                <ul class="cargos__block-info-list">
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">20 т.</p>
-                                        <div class="cargos__block-info-circle"></div>
-                                    </li>
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">Тентований</p>
-                                        <div class="cargos__block-info-circle"></div>
-                                    </li>
-                                    <li class="cargos__block-info-item">
-                                        <p class="cargos__block-info-elem">Готівка</p>
-                                    </li>
+                                <ul class="cargos__block-info">
+                                    <li class="cargos__block-info-item">20 т.</li>
+                                    <li class="cargos__block-info-item">Тентований</li>
+                                    <li class="cargos__block-info-item">Готівка</li>
                                 </ul>
-                            </div>
                             <div class="cargos__block-price">
                                 <p class="cargos__block-price-title">25000₴</p>
                                 <p class="cargos__block-price-subtitle">20,8₴ / км.</p>
@@ -487,8 +464,39 @@
             </section>
         </main>
 
-        <footer>Footer</footer>
+        <footer class="footer">
+            <div class="footer__wrapper __container">
+                <div class="footer__left">
+                    <a href=""><img class="navbar__logo" src="img/logo.svg"></a>
+                    <p class="footer__copyright">2024 © HTTP-Logistic Service</p>
+                </div>
+
+                <div class="footer__right">
+                    <ul class="footer__list">
+                        <li class="footer__item-head"><a href="">Головна</a></li>
+                        <li class="footer__item"><a href="">Правила платформи</a></li>
+                        <li class="footer__item"><a href="">Політика конфіденційності</a></li>
+                    </ul>
+
+                    <ul class="footer__list">
+                        <li class="footer__item-head">Вантажі</li>
+                        <li class="footer__item"><a href="">Біржа вантажів</a></li>
+                        <li class="footer__item"><a href="">Додати вантаж</a></li>
+                    </ul>
+
+                    <ul class="footer__list">
+                        <li class="footer__item-head">Транспорт</li>
+                        <li class="footer__item"><a href="">Біржа транспорту</a></li>
+                        <li class="footer__item"><a href="">Додати транспорт</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
     </div>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script>
+    loading();
+    </script>
 </body>
 
 </html>
