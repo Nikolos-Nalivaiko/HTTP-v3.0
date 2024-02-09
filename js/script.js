@@ -201,3 +201,13 @@ function loading() {
         $('.load-page').fadeOut();
     });
 }
+
+function openFilter() {
+    $('.filter__btn-setting').on('click', function (event) {
+        if ($(window).width() < 1190) {
+            $('.filter__form--mobile').fadeIn().css("display", "grid");
+        } else {
+            $('.filter__extra-inputs').fadeIn().css("display", "grid");
+        }
+    })
+}
