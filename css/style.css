@@ -885,7 +885,6 @@ h3 {
   border: 1px solid #DBDBDB;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-right: 40px;
 }
 @media (max-width: 1600px) {
   .reviews__image {
@@ -905,6 +904,16 @@ h3 {
 @media (min-width: 1600px) {
   .reviews__image {
     height: 95px;
+  }
+}
+@media (max-width: 1600px) {
+  .reviews__image {
+    margin-right: calc(30px + 10 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .reviews__image {
+    margin-right: 40px;
   }
 }
 .reviews__stars {
@@ -931,8 +940,15 @@ h3 {
     font-size: 20px;
   }
 }
-.reviews__star:not(:last-child) {
-  margin-right: 15px;
+@media (max-width: 1600px) {
+  .reviews__star:not(:last-child) {
+    margin-right: calc(10px + 5 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .reviews__star:not(:last-child) {
+    margin-right: 15px;
+  }
 }
 .reviews__star--active {
   color: #FFA800;
@@ -2612,6 +2628,7 @@ input[type=file] {
 }
 .cargo__block-headline {
   font-weight: 600;
+  line-height: 150%;
   border-bottom: 1px solid #DBDBDB;
 }
 @media (max-width: 1600px) and (max-width: 767px) {
@@ -3231,18 +3248,56 @@ input[type=file] {
   text-align: center;
   max-width: 540px;
 }
+@media (max-width: 425px) {
+  .qr-code__header {
+    text-align: left;
+  }
+}
 .qr-code__subtitle {
   color: #5F5F5F;
   line-height: 150%;
   margin-top: 15px;
 }
 .qr-code__image {
-  margin-top: 65px;
-  padding: 50px;
   border-radius: 10px;
   border: 1px solid #DBDBDB;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+@media (max-width: 1600px) {
+  .qr-code__image {
+    margin-top: calc(45px + 20 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .qr-code__image {
+    margin-top: 65px;
+  }
+}
+@media (max-width: 1600px) {
+  .qr-code__image {
+    width: calc(270px + 85 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .qr-code__image {
+    width: 355px;
+  }
+}
+@media (max-width: 1600px) {
+  .qr-code__image {
+    padding: calc(35px + 15 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .qr-code__image {
+    padding: 50px;
+  }
+}
+@media (max-width: 425px) {
+  .qr-code__image {
+    width: 100%;
+  }
 }
 .qr-code__image:hover {
   -webkit-transition: 0.3s;
