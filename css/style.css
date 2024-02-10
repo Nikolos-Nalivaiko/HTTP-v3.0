@@ -2015,7 +2015,7 @@ input[type=file] {
 }
 @media (max-width: 1600px) {
   .exchange__btn {
-    padding-right: calc(45px + 10 * (100vw - 320px) / (1600 - 320));
+    padding-right: calc(35px + 20 * (100vw - 320px) / (1600 - 320));
   }
 }
 @media (min-width: 1600px) {
@@ -2025,7 +2025,7 @@ input[type=file] {
 }
 @media (max-width: 1600px) {
   .exchange__btn {
-    padding-left: calc(45px + 10 * (100vw - 320px) / (1600 - 320));
+    padding-left: calc(35px + 20 * (100vw - 320px) / (1600 - 320));
   }
 }
 @media (min-width: 1600px) {
@@ -2938,13 +2938,52 @@ input[type=file] {
 }
 
 .cars__content {
-  margin-top: 60px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  -webkit-column-gap: 30px;
-     -moz-column-gap: 30px;
-          column-gap: 30px;
-  row-gap: 30px;
+}
+@media (max-width: 1600px) {
+  .cars__content {
+    margin-top: calc(45px + 15 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .cars__content {
+    margin-top: 60px;
+  }
+}
+@media (max-width: 992px) {
+  .cars__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 650px) {
+  .cars__content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 1600px) {
+  .cars__content {
+    -webkit-column-gap: calc(20px + 10 * (100vw - 320px) / (1600 - 320));
+       -moz-column-gap: calc(20px + 10 * (100vw - 320px) / (1600 - 320));
+            column-gap: calc(20px + 10 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .cars__content {
+    -webkit-column-gap: 30px;
+       -moz-column-gap: 30px;
+            column-gap: 30px;
+  }
+}
+@media (max-width: 1600px) {
+  .cars__content {
+    row-gap: calc(20px + 10 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .cars__content {
+    row-gap: 30px;
+  }
 }
 .cars__block {
   border-radius: 10px;
@@ -2956,19 +2995,79 @@ input[type=file] {
 }
 .cars__block-image {
   width: 100%;
-  height: 290px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
+@media (max-width: 1600px) {
+  .cars__block-image {
+    height: calc(230px + 60 * (100vw - 992px) / (1600 - 992));
+  }
+}
+@media (min-width: 1600px) {
+  .cars__block-image {
+    height: 290px;
+  }
+}
+@media (max-width: 992px) and (max-width: 1600px) {
+  .cars__block-image {
+    height: calc(200px + 140 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (max-width: 992px) and (min-width: 1600px) {
+  .cars__block-image {
+    height: 340px;
+  }
+}
+@media (max-width: 650px) and (max-width: 1600px) {
+  .cars__block-image {
+    height: calc(200px + 600 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (max-width: 650px) and (min-width: 1600px) {
+  .cars__block-image {
+    height: 800px;
+  }
+}
 .cars__block-name {
-  padding: 25px;
   border-bottom: 1px solid #EDEDED;
   font-size: 22px;
   font-weight: 600;
+  line-height: 150%;
+}
+@media (max-width: 1600px) {
+  .cars__block-name {
+    padding: calc(20px + 5 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .cars__block-name {
+    padding: 25px;
+  }
 }
 .cars__block-middle {
-  padding: 20px 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+@media (max-width: 1600px) {
+  .cars__block-middle {
+    padding-right: calc(20px + 5 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .cars__block-middle {
+    padding-right: 25px;
+  }
+}
+@media (max-width: 1600px) {
+  .cars__block-middle {
+    padding-left: calc(20px + 5 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .cars__block-middle {
+    padding-left: 25px;
+  }
 }
 .cars__block-city {
   font-weight: 600;
@@ -2991,11 +3090,35 @@ input[type=file] {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.cars__block-info-dot {
-  width: 5px;
-  height: 5px;
-  background: #D9D9D9;
-  border-radius: 5px;
+.cars__block-info-item:not(:first-child) {
+  list-style: inside;
+}
+.cars__block-info-item:not(:first-child)::marker {
+  color: #D9D9D9;
+}
+@media (max-width: 1150px) {
+  .cars__block-info-item:not(:first-child) {
+    margin-top: 15px;
+  }
+}
+@media (max-width: 1150px) {
+  .cars__block-info-item {
+    list-style: inside;
+  }
+  .cars__block-info-item::marker {
+    color: #D9D9D9;
+  }
+}
+@media (max-width: 1150px) {
+  .cars__block-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
 }
 .cars__block-footer {
   border-top: 1px solid #EDEDED;
@@ -3474,6 +3597,21 @@ input[type=file] {
 .filter__input {
   font-size: 18px;
   font-weight: 600;
+}
+.filter__input::-webkit-input-placeholder {
+  color: #101722;
+}
+.filter__input::-moz-placeholder {
+  color: #101722;
+}
+.filter__input:-ms-input-placeholder {
+  color: #101722;
+}
+.filter__input::-ms-input-placeholder {
+  color: #101722;
+}
+.filter__input::placeholder {
+  color: #101722;
 }
 .filter__input-wrapper {
   display: -webkit-inline-box;
