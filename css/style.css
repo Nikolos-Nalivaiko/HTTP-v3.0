@@ -3535,10 +3535,29 @@ input[type=file] {
   transition: 1s;
 }
 .car__slider-item {
-  height: 435px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
+}
+@media (max-width: 1600px) {
+  .car__slider-item {
+    height: calc(200px + 235 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .car__slider-item {
+    height: 435px;
+  }
+}
+@media (max-width: 768px) and (max-width: 1600px) {
+  .car__slider-item {
+    height: calc(200px + 700 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (max-width: 768px) and (min-width: 1600px) {
+  .car__slider-item {
+    height: 900px;
+  }
 }
 .car__subslider {
   margin-top: 45px;
@@ -3552,15 +3571,54 @@ input[type=file] {
       -ms-flex-align: end;
           align-items: flex-end;
 }
+@media (max-width: 650px) {
+  .car__subslider {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+}
 .car__subslider-icon {
-  font-size: 40px;
   margin-right: 25px;
   color: #5BB318;
 }
+@media (max-width: 1600px) and (max-width: 767px) {
+  .car__subslider-icon {
+    font-size: calc(35px + 10.7 * (100vw - 320px) / 1600);
+  }
+}
+@media (max-width: 1600px) and (min-width: 767px) {
+  .car__subslider-icon {
+    font-size: calc(35px + 5 * 100vw / 1600);
+  }
+}
+@media (min-width: 1600px) {
+  .car__subslider-icon {
+    font-size: 40px;
+  }
+}
 .car__subslider-title {
-  font-size: 20px;
   font-weight: 600;
   line-height: 150%;
+}
+@media (max-width: 1600px) and (max-width: 767px) {
+  .car__subslider-title {
+    font-size: calc(18px + 4.7 * (100vw - 320px) / 1600);
+  }
+}
+@media (max-width: 1600px) and (min-width: 767px) {
+  .car__subslider-title {
+    font-size: calc(18px + 2 * 100vw / 1600);
+  }
+}
+@media (min-width: 1600px) {
+  .car__subslider-title {
+    font-size: 20px;
+  }
 }
 .car__subslider-subtitle {
   color: #5F5F5F;
@@ -3574,6 +3632,14 @@ input[type=file] {
       -ms-flex-align: center;
           align-items: center;
 }
+@media (max-width: 650px) {
+  .car__subslider-point {
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #DBDBDB;
+  }
+}
 .car__control {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3582,6 +3648,14 @@ input[type=file] {
       -ms-flex-align: end;
           align-items: flex-end;
 }
+@media (max-width: 650px) {
+  .car__control {
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 .car__control-arrows {
   margin-left: 25px;
   display: -webkit-box;
@@ -3589,7 +3663,6 @@ input[type=file] {
   display: flex;
 }
 .car__control-icon {
-  font-size: 25px;
   padding: 15px;
   border-radius: 10px 0px 0px 10px;
   border: 1px solid #DBDBDB;
@@ -3597,6 +3670,21 @@ input[type=file] {
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+@media (max-width: 1600px) and (max-width: 767px) {
+  .car__control-icon {
+    font-size: calc(20px + 10.7 * (100vw - 320px) / 1600);
+  }
+}
+@media (max-width: 1600px) and (min-width: 767px) {
+  .car__control-icon {
+    font-size: calc(20px + 5 * 100vw / 1600);
+  }
+}
+@media (min-width: 1600px) {
+  .car__control-icon {
+    font-size: 25px;
+  }
 }
 .car__control-icon:hover {
   -webkit-transition: 0.3s;
@@ -3614,23 +3702,86 @@ input[type=file] {
 .car__control-text span {
   color: #5BB318;
 }
-.car__info {
-  margin-top: 65px;
+@media (max-width: 1600px) {
+  .car__info {
+    margin-top: calc(35px + 30 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .car__info {
+    margin-top: 65px;
+  }
 }
 .car__info-headline {
   font-weight: 600;
-  font-size: 24px;
-  padding-bottom: 25px;
   border-bottom: 1px solid #DBDBDB;
 }
+@media (max-width: 1600px) and (max-width: 767px) {
+  .car__info-headline {
+    font-size: calc(18px + 12.7 * (100vw - 320px) / 1600);
+  }
+}
+@media (max-width: 1600px) and (min-width: 767px) {
+  .car__info-headline {
+    font-size: calc(18px + 6 * 100vw / 1600);
+  }
+}
+@media (min-width: 1600px) {
+  .car__info-headline {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1600px) {
+  .car__info-headline {
+    padding-bottom: calc(20px + 5 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .car__info-headline {
+    padding-bottom: 25px;
+  }
+}
 .car__info-list {
-  margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(4, auto);
-  row-gap: 45px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  grid-template-columns: repeat(4, auto);
+}
+@media (max-width: 1600px) {
+  .car__info-list {
+    margin-top: calc(25px + 5 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .car__info-list {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 992px) {
+  .car__info-list {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+@media (max-width: 768px) {
+  .car__info-list {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+@media (max-width: 525px) {
+  .car__info-list {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+@media (max-width: 1600px) {
+  .car__info-list {
+    row-gap: calc(35px + 10 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .car__info-list {
+    row-gap: 45px;
+  }
 }
 .car__info-icon {
   font-size: 30px;
