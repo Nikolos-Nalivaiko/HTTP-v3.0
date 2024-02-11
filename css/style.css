@@ -3347,7 +3347,7 @@ input[type=file] {
 }
 @media (max-width: 1600px) {
   .qr-code__image {
-    width: calc(270px + 85 * (100vw - 320px) / (1600 - 320));
+    width: calc(320px + 35 * (100vw - 320px) / (1600 - 320));
   }
 }
 @media (min-width: 1600px) {
@@ -3357,7 +3357,7 @@ input[type=file] {
 }
 @media (max-width: 1600px) {
   .qr-code__image {
-    padding: calc(35px + 15 * (100vw - 320px) / (1600 - 320));
+    padding: calc(65px + -15 * (100vw - 320px) / (1600 - 320));
   }
 }
 @media (min-width: 1600px) {
