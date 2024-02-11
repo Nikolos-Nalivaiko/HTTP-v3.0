@@ -211,3 +211,15 @@ function openFilter() {
         }
     })
 }
+
+function openMenu() {
+    $('.menu--mobile__block').on('click', '.menu--mobile__item', function() {
+        // Знаходимо всі елементи .menu--mobile__subitem в межах поточного блоку
+        $('.menu--mobile__subitem').hide();
+        var subitems = $(this).siblings('.menu--mobile__subitem');
+
+        // Тут ви можете використовувати змінну subitems для подальшої обробки ваших дій
+        // Наприклад, вивести їх у консоль чи зробити інші дії.
+        subitems.fadeIn();
+    });
+}

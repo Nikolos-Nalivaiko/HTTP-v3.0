@@ -12,6 +12,27 @@
 
 <body>
 
+    <div class="menu--mobile">
+        <div class="menu--mobile__content">
+            <ul class="menu--mobile__list">
+                <li class="menu--mobile__item"><p class="menu--mobile__icon __icon-home"></p><a href="/" class="menu--mobile__link">Головна</a></li>
+               
+                <div class="menu--mobile__block">
+                    <li class="menu--mobile__item"><p class="menu--mobile__icon __icon-cargos"></p>Вантажі</li>
+                    <li class="menu--mobile__subitem"><a href="">Біржа  вантажів</a></li>
+                    <li class="menu--mobile__subitem"><a href="">Додати вантаж</a></li>
+                </div>
+
+                <div class="menu--mobile__block">
+                    <li class="menu--mobile__item"><p class="menu--mobile__icon __icon-cars"></p>Транспорт</li>
+                    <li class="menu--mobile__subitem"><a href="">Біржа  транспорту</a></li>
+                    <li class="menu--mobile__subitem"><a href="">Додати транспорт</a></li>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+
     <div class="load-page">
         <div class="load-page__body">
             <div class="loader"></div>
@@ -26,23 +47,19 @@
                 <nav class="navbar">
                     <ul class="navbar__list">
                         <li class="navbar__item"><a href="">Головна</a></li>
-                        <li class="navbar__item">
-                            <div class="navbar__dropdown-container">
+                        <li class="navbar__item navbar__dropdown-container">
                                 <p class="navbar__dropdown-headline">Вантажі</p>
                                 <div class="navbar__dropdown-content">
                                     <a href="#">Біржа вантажів</a>
                                     <a href="#">Додати вантаж</a>
                                 </div>
-                            </div>
                         </li>
-                        <li class="navbar__item">
-                            <div class="navbar__dropdown-container">
+                        <li class="navbar__item navbar__dropdown-container">
                                 <p class="navbar__dropdown-headline">Транспорт</p>
                                 <div class="navbar__dropdown-content">
                                     <a href="#">Біржа транспорту</a>
                                     <a href="#">Додати транспорт</a>
                                 </div>
-                            </div>
                         </li>
                         <li class="navbar__item"><a class="navbar__item-btn" href="sign-in.html">Увійти</a></li>
                         <!-- <a href="" class="navbar__user">
@@ -296,6 +313,7 @@
         $('.reviews__track')
     );
     loading();
+    openMenu();
     </script>
 </body>
 
