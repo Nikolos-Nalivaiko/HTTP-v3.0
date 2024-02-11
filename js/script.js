@@ -213,13 +213,16 @@ function openFilter() {
 }
 
 function openMenu() {
+    
+    $('.navbar__menu-start').on('click', function(){
+        $(this).toggleClass("__icon-close");
+        $('.menu--mobile').fadeToggle();
+    })
+
     $('.menu--mobile__block').on('click', '.menu--mobile__item', function() {
-        $('.menu--mobile__item').removeClass('menu--mobile__item--active');
-        $('.menu--mobile__subitem-wrap').hide();
-        console.log($(this))
-        $(this).addClass('menu--mobile__item--active');
-        // $('.menu--mobile__subitem-wrap').show();
         var subitemWrap = $(this).siblings('.menu--mobile__subitem-wrap');
-        subitemWrap.fadeIn();
+        $(this).find('.menu--mobile__icon').toggleClass('menu--mobile__icon--active')
+        $(this).toggleClass('menu--mobile__item--active');
+        subitemWrap.fadeToggle();
     });
 }
