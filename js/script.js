@@ -80,121 +80,219 @@ function UploadImage() {
     })
 }
 
-class slider {
+function Slider(track, container, prevBtn, nextBtn, item, SlideToShow, SlideToScroll, margin, adaptives, swipeArea) {
 
-    constructor(track, container, prevBtn, nextBtn, item, SlideToShow, SlideToScroll, margin, adaptives, swipeArea) {
-        this.track = track;
-        this.container = container;
-        this.prevBtn = prevBtn;
-        this.nextBtn = nextBtn;
-        this.item = item;
-        this.SlideToShow = SlideToShow;
-        this.SlideToScroll = SlideToScroll;
-        this.margin = margin;
-        this.position = 0;
-        this.CountItems = item.length;
-        this.counter = this.SlideToShow;
-        this.counterSum = this.CountItems;
-        this.swipeArea = swipeArea;
+    let itemCount = item.length;
+    let position = 0;
+    let counterItems = itemCount;
+    let counter = SlideToShow
 
-        this.adaptiveDiapason(adaptives);
-        this.setWidth();
-        this.init();
-        this.swipe();
-        this.updateCounterDisplay();
-    }
-    
-    init() {
-        this.nextBtn.on('click', () => this.moveRight());
-        this.prevBtn.on('click', () => this.moveLeft());
-      }
+    swipe();
 
-    setWidth() {
-        this.ItemWidth = Math.round((this.container.width() / this.SlideToShow) - (this.margin * (this.SlideToShow - 1)) / this.SlideToShow);
+    adaptives.forEach(item => {
+        if(window.innerWidth <= item.width) {
+            SlideToShow = item.count
+            counter = item.count;
+        } 
+    }); 
 
-        this.item.each((index, item) => {
-            $(item).css({
-                minWidth: this.ItemWidth,
-                marginRight: this.margin,
-            });
+    updateCounterDisplay();
+
+    let ItemWidth = Math.round((container.width() / SlideToShow) - (margin * (SlideToShow - 1)) / SlideToShow);
+
+    item.each((index, item) => {
+        $(item).css({
+            minWidth: ItemWidth,
+            marginRight: margin,
         });
-    }
+    });
 
-    moveRight() {
-        this.ItemsLeft = this.CountItems - Math.round((Math.abs(this.position) + (this.SlideToShow * this.ItemWidth) + (this.SlideToScroll * this.margin)) / this.ItemWidth);
+    nextBtn.click(moveRight);
+    prevBtn.click(moveLeft);
 
-        this.movePosition = (this.SlideToScroll * this.ItemWidth) + (this.SlideToScroll * this.margin); 
+    function moveRight() {
+        ItemsLeft = itemCount - Math.round((Math.abs(position) + (SlideToShow * ItemWidth) + (SlideToScroll * margin)) / ItemWidth);
+
+        let movePosition = (SlideToScroll * ItemWidth) + (SlideToScroll * margin); 
             
-        this.position -= this.ItemsLeft > this.SlideToScroll ? this.movePosition : (this.ItemsLeft * this.ItemWidth) + (this.ItemsLeft * this.margin);
+        position -= ItemsLeft > SlideToScroll ? movePosition : (ItemsLeft * ItemWidth) + (ItemsLeft * margin);
     
-        this.counter++;
+        counter++;
 
-        if(this.ItemsLeft == 0) {
-            this.position = 0;
-            this.counter = this.SlideToShow;
+        if(ItemsLeft == 0) {
+            position = 0;
+            counter = SlideToShow;
         }
     
-        this.track.css({
-            transform:`translateX(${this.position}px)`
+        track.css({
+            transform:`translateX(${position}px)`
         })
-        this.updateCounterDisplay();
+        updateCounterDisplay();
     }
 
-    moveLeft() {
-        this.ItemsLeft = Math.round(Math.abs(this.position) / this.ItemWidth);
+    function moveLeft() {
+        ItemsLeft = Math.round(Math.abs(position) / ItemWidth);
         
-        this.movePosition = (this.SlideToScroll * this.ItemWidth) + (this.SlideToScroll * this.margin);
+        let movePosition = (SlideToScroll * ItemWidth) + (SlideToScroll * margin);
         
-        this.position += this.ItemsLeft > this.SlideToScroll ? this.movePosition : (this.ItemsLeft * this.ItemWidth) + (this.ItemsLeft * this.margin);
+        position += ItemsLeft > SlideToScroll ? movePosition : (ItemsLeft * ItemWidth) + (ItemsLeft * margin);
     
-        if(this.ItemsLeft == 1) {
-            this.counter = this.SlideToShow;
+        if(ItemsLeft == 1) {
+            counter = SlideToShow;
         } 
 
-        if(this.ItemsLeft > 1) {
-            this.counter--;
+        if(ItemsLeft > 1) {
+            counter--;
         }
     
-        this.track.css({
-            transform:`translateX(${this.position}px)`
-        }) 
-        this.updateCounterDisplay();   
+        track.css({
+            transform:`translateX(${position}px)`
+        })  
+        updateCounterDisplay();       
     }
 
-    swipe() {
-        this.swipeArea.on('touchstart', (event) => {
-            this.touchStartX = event.originalEvent.touches[0].pageX;
+    function swipe() {
+        swipeArea.on('touchstart', (event) => {
+            touchStartX = event.originalEvent.touches[0].pageX;
         });
 
-        this.swipeArea.on('touchend', (event) => {
-            this.touchEndX = event.originalEvent.changedTouches[0].pageX;
-            this.touchSum = this.touchStartX - this.touchEndX;
+        swipeArea.on('touchend', (event) => {
+            touchEndX = event.originalEvent.changedTouches[0].pageX;
+            touchSum = touchStartX - touchEndX;
 
-            let absTouckSum = Math.abs(this.touchSum);
+            let absTouckSum = Math.abs(touchSum);
     
-            if (this.touchSum > 0 && absTouckSum > 50) {
-                this.moveRight();
-            } else if (this.touchSum < 0 && absTouckSum > 50) {
-                this.moveLeft();
+            if (touchSum > 0 && absTouckSum > 50) {
+                moveRight();
+                updateCounterDisplay();
+            } else if (touchSum < 0 && absTouckSum > 50) {
+                moveLeft();
+                updateCounterDisplay();
             }
         });
     }
-
-    adaptiveDiapason(adaptives) {
-
-        adaptives.forEach(item => {
-            if(window.innerWidth <= item.width) {
-                this.SlideToShow = item.count
-            } 
-        });
-
-    }
-
-    updateCounterDisplay() {
-        // $('#car__slider-counter').text(`${this.counter}`);
-        $('.car__control-text').html(`<span class="car-info__slider-count--span">${this.counter}</span> / ${this.counterSum}`);
+    
+    function updateCounterDisplay() {
+        $('.car__control-text').html(`<span class="car-info__slider-count--span">${counter}</span> / ${counterItems}`);
     }
 }
+
+// class slider {
+
+//     constructor(track, container, prevBtn, nextBtn, item, SlideToShow, SlideToScroll, margin, adaptives, swipeArea) {
+//         this.track = track;
+//         this.container = container;
+//         this.prevBtn = prevBtn;
+//         this.nextBtn = nextBtn;
+//         this.item = item;
+//         this.SlideToShow = SlideToShow;
+//         this.SlideToScroll = SlideToScroll;
+//         this.margin = margin;
+//         this.position = 0;
+//         this.CountItems = this.item.length;
+//         // this.CountItems = 4;
+//         this.counter = this.SlideToShow;
+//         this.swipeArea = swipeArea;
+//         this.counterItems = this.CountItems;
+
+//         this.adaptiveDiapason(adaptives);
+//         this.setWidth();
+//         this.init();
+//         this.swipe();
+//         this.updateCounterDisplay();
+//     }
+    
+//     init() {
+//         this.nextBtn.on('click', () => this.moveRight());
+//         this.prevBtn.on('click', () => this.moveLeft());
+//       }
+
+//     setWidth() {
+//         this.ItemWidth = Math.round((this.container.width() / this.SlideToShow) - (this.margin * (this.SlideToShow - 1)) / this.SlideToShow);
+
+//         this.item.each((index, item) => {
+//             $(item).css({
+//                 minWidth: this.ItemWidth,
+//                 marginRight: this.margin,
+//             });
+//         });
+//     }
+
+//     moveRight() {
+//         this.ItemsLeft = this.CountItems - Math.round((Math.abs(this.position) + (this.SlideToShow * this.ItemWidth) + (this.SlideToScroll * this.margin)) / this.ItemWidth);
+
+//         this.movePosition = (this.SlideToScroll * this.ItemWidth) + (this.SlideToScroll * this.margin); 
+            
+//         this.position -= this.ItemsLeft > this.SlideToScroll ? this.movePosition : (this.ItemsLeft * this.ItemWidth) + (this.ItemsLeft * this.margin);
+    
+//         this.counter++;
+
+//         if(this.ItemsLeft == 0) {
+//             this.position = 0;
+//             this.counter = this.SlideToShow;
+//         }
+    
+//         this.track.css({
+//             transform:`translateX(${this.position}px)`
+//         })
+//         this.updateCounterDisplay();
+//     }
+
+//     moveLeft() {
+//         this.ItemsLeft = Math.round(Math.abs(this.position) / this.ItemWidth);
+        
+//         this.movePosition = (this.SlideToScroll * this.ItemWidth) + (this.SlideToScroll * this.margin);
+        
+//         this.position += this.ItemsLeft > this.SlideToScroll ? this.movePosition : (this.ItemsLeft * this.ItemWidth) + (this.ItemsLeft * this.margin);
+    
+//         if(this.ItemsLeft == 1) {
+//             this.counter = this.SlideToShow;
+//         } 
+
+//         if(this.ItemsLeft > 1) {
+//             this.counter--;
+//         }
+    
+//         this.track.css({
+//             transform:`translateX(${this.position}px)`
+//         }) 
+//         this.updateCounterDisplay();   
+//     }
+
+//     swipe() {
+//         this.swipeArea.on('touchstart', (event) => {
+//             this.touchStartX = event.originalEvent.touches[0].pageX;
+//         });
+
+//         this.swipeArea.on('touchend', (event) => {
+//             this.touchEndX = event.originalEvent.changedTouches[0].pageX;
+//             this.touchSum = this.touchStartX - this.touchEndX;
+
+//             let absTouckSum = Math.abs(this.touchSum);
+    
+//             if (this.touchSum > 0 && absTouckSum > 50) {
+//                 this.moveRight();
+//             } else if (this.touchSum < 0 && absTouckSum > 50) {
+//                 this.moveLeft();
+//             }
+//         });
+//     }
+
+//     adaptiveDiapason(adaptives) {
+
+//         adaptives.forEach(item => {
+//             if(window.innerWidth <= item.width) {
+//                 this.SlideToShow = item.count
+//                 this.counter = item.count;
+//             } 
+//         });
+
+//     }
+
+//     updateCounterDisplay() {
+//         $('.car__control-text').html(`<span class="car-info__slider-count--span">${this.counter}</span> / ${this.counterItems}`);
+//     }
+// }
 
 function loading() {
     $(document).ready(function() {

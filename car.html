@@ -213,7 +213,7 @@
                 </div>
 
                 <div class="user__block">
-                    <a href="user.php" class="user__block-item user__block-item--mobile">
+                    <a href="user.html" class="user__block-item user__block-item--mobile">
                         <img src="img/user.jpg" alt="" class="user__block-image">
                         <div class="user__block-text user__block-text--mobile">
                             <p class="user__block-name">Ковальчук Олександр Ігорович</p>
@@ -376,7 +376,7 @@
     </div>
     <script type="text/javascript" src="js/script.js"></script>
     <script>
-    const Slider = new slider(
+    Slider(
         $('.car__slider-track'),
         $('.car__slider'),
         $('.__prev'),
@@ -387,12 +387,12 @@
         30,
         [{
             width: '768',
-            count: '1'
+            count: 1
         }, ],
         $('.car__slider')
-    );
+        );
 
-    const SliderReview = new slider(
+    Slider(
         $('.reviews__track'),
         $('.reviews__slider'),
         $('.__prev'),
