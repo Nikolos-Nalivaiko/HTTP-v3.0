@@ -89,7 +89,7 @@
                         </div>
                     </div>
 
-                    <p class="user__about-icon __icon-license-user" title="Преміум користувач"></p>
+                    <!-- <p class="user__about-icon __icon-license-user" title="Преміум користувач"></p> -->
                 </div>
 
                 <div class="user__contacts">
@@ -111,7 +111,14 @@
                 </div>
 
                 <div class="user__panel">
-                    <p class="user__panel-headline">Панель керування</p>
+                    <div class="user__panel-head">
+                        <p class="user__panel-headline">Панель керування</p>
+
+                        <div class="reviews__arrows user__panel-arrows">
+                            <p class="reviews__arrow __icon-left_arr __prevTab"></p>
+                            <p class="reviews__arrow __icon-right_arr __nextTab"></p>
+                        </div>
+                    </div>
 
                     <div class="user__tabs">
                         <div class="user__tabs-track">
@@ -615,8 +622,8 @@
     Slider(
         $('.user__tabs-track'),
         $('.user__tabs'),
-        $('.__prev'),
-        $('.__next'),
+        $('.__prevTab'),
+        $('.__nextTab'),
         $('.user__tab'),
         3,
         1,
