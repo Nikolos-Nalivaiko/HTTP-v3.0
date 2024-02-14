@@ -87,18 +87,16 @@ function Slider(track, container, prevBtn, nextBtn, items, SlideToShow, SlideToS
     let counterItems = itemCount;
     let counter = SlideToShow
 
-    updateCounterDisplay();
-
-    console.log(itemCount);
-
-    swipe();
-
     adaptives.forEach(item => {
         if(window.innerWidth <= item.width) {
             SlideToShow = item.count
-            counter = item.count;
+            counter = SlideToShow;
         } 
-    }); 
+    });
+
+    updateCounterDisplay();
+
+    swipe(); 
 
     let ItemWidth = Math.round((container.width() / SlideToShow) - (margin * (SlideToShow - 1)) / SlideToShow);
 
