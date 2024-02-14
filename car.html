@@ -377,6 +377,22 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script>
     Slider(
+        $('.reviews__track'),
+        $('.reviews__slider'),
+        $('.__prev'),
+        $('.__next'),
+        $('.reviews__block'),
+        2,
+        1,
+        30,
+        [{
+            width: '768',
+            count: '1'
+        }, ],
+        $('.reviews__track')
+    ); 
+
+    Slider(
         $('.car__slider-track'),
         $('.car__slider'),
         $('.__prev'),
@@ -392,21 +408,6 @@
         $('.car__slider')
         );
 
-    Slider(
-        $('.reviews__track'),
-        $('.reviews__slider'),
-        $('.__prev'),
-        $('.__next'),
-        $('.reviews__block'),
-        2,
-        1,
-        30,
-        [{
-            width: '768',
-            count: '1'
-        }, ],
-        $('.reviews__track')
-    ); 
     loading();
     openMenu();
     </script>

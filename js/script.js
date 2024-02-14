@@ -80,12 +80,16 @@ function UploadImage() {
     })
 }
 
-function Slider(track, container, prevBtn, nextBtn, item, SlideToShow, SlideToScroll, margin, adaptives, swipeArea) {
+function Slider(track, container, prevBtn, nextBtn, items, SlideToShow, SlideToScroll, margin, adaptives, swipeArea) {
 
-    let itemCount = item.length;
+    let itemCount = items.length;
     let position = 0;
     let counterItems = itemCount;
     let counter = SlideToShow
+
+    updateCounterDisplay();
+
+    console.log(itemCount);
 
     swipe();
 
@@ -96,11 +100,9 @@ function Slider(track, container, prevBtn, nextBtn, item, SlideToShow, SlideToSc
         } 
     }); 
 
-    updateCounterDisplay();
-
     let ItemWidth = Math.round((container.width() / SlideToShow) - (margin * (SlideToShow - 1)) / SlideToShow);
 
-    item.each((index, item) => {
+    items.each((index, item) => {
         $(item).css({
             minWidth: ItemWidth,
             marginRight: margin,
@@ -148,7 +150,7 @@ function Slider(track, container, prevBtn, nextBtn, item, SlideToShow, SlideToSc
         track.css({
             transform:`translateX(${position}px)`
         })  
-        updateCounterDisplay();       
+        updateCounterDisplay();    
     }
 
     function swipe() {
@@ -164,11 +166,10 @@ function Slider(track, container, prevBtn, nextBtn, item, SlideToShow, SlideToSc
     
             if (touchSum > 0 && absTouckSum > 50) {
                 moveRight();
-                updateCounterDisplay();
             } else if (touchSum < 0 && absTouckSum > 50) {
                 moveLeft();
-                updateCounterDisplay();
             }
+            updateCounterDisplay();
         });
     }
     
@@ -176,123 +177,6 @@ function Slider(track, container, prevBtn, nextBtn, item, SlideToShow, SlideToSc
         $('.car__control-text').html(`<span class="car-info__slider-count--span">${counter}</span> / ${counterItems}`);
     }
 }
-
-// class slider {
-
-//     constructor(track, container, prevBtn, nextBtn, item, SlideToShow, SlideToScroll, margin, adaptives, swipeArea) {
-//         this.track = track;
-//         this.container = container;
-//         this.prevBtn = prevBtn;
-//         this.nextBtn = nextBtn;
-//         this.item = item;
-//         this.SlideToShow = SlideToShow;
-//         this.SlideToScroll = SlideToScroll;
-//         this.margin = margin;
-//         this.position = 0;
-//         this.CountItems = this.item.length;
-//         // this.CountItems = 4;
-//         this.counter = this.SlideToShow;
-//         this.swipeArea = swipeArea;
-//         this.counterItems = this.CountItems;
-
-//         this.adaptiveDiapason(adaptives);
-//         this.setWidth();
-//         this.init();
-//         this.swipe();
-//         this.updateCounterDisplay();
-//     }
-    
-//     init() {
-//         this.nextBtn.on('click', () => this.moveRight());
-//         this.prevBtn.on('click', () => this.moveLeft());
-//       }
-
-//     setWidth() {
-//         this.ItemWidth = Math.round((this.container.width() / this.SlideToShow) - (this.margin * (this.SlideToShow - 1)) / this.SlideToShow);
-
-//         this.item.each((index, item) => {
-//             $(item).css({
-//                 minWidth: this.ItemWidth,
-//                 marginRight: this.margin,
-//             });
-//         });
-//     }
-
-//     moveRight() {
-//         this.ItemsLeft = this.CountItems - Math.round((Math.abs(this.position) + (this.SlideToShow * this.ItemWidth) + (this.SlideToScroll * this.margin)) / this.ItemWidth);
-
-//         this.movePosition = (this.SlideToScroll * this.ItemWidth) + (this.SlideToScroll * this.margin); 
-            
-//         this.position -= this.ItemsLeft > this.SlideToScroll ? this.movePosition : (this.ItemsLeft * this.ItemWidth) + (this.ItemsLeft * this.margin);
-    
-//         this.counter++;
-
-//         if(this.ItemsLeft == 0) {
-//             this.position = 0;
-//             this.counter = this.SlideToShow;
-//         }
-    
-//         this.track.css({
-//             transform:`translateX(${this.position}px)`
-//         })
-//         this.updateCounterDisplay();
-//     }
-
-//     moveLeft() {
-//         this.ItemsLeft = Math.round(Math.abs(this.position) / this.ItemWidth);
-        
-//         this.movePosition = (this.SlideToScroll * this.ItemWidth) + (this.SlideToScroll * this.margin);
-        
-//         this.position += this.ItemsLeft > this.SlideToScroll ? this.movePosition : (this.ItemsLeft * this.ItemWidth) + (this.ItemsLeft * this.margin);
-    
-//         if(this.ItemsLeft == 1) {
-//             this.counter = this.SlideToShow;
-//         } 
-
-//         if(this.ItemsLeft > 1) {
-//             this.counter--;
-//         }
-    
-//         this.track.css({
-//             transform:`translateX(${this.position}px)`
-//         }) 
-//         this.updateCounterDisplay();   
-//     }
-
-//     swipe() {
-//         this.swipeArea.on('touchstart', (event) => {
-//             this.touchStartX = event.originalEvent.touches[0].pageX;
-//         });
-
-//         this.swipeArea.on('touchend', (event) => {
-//             this.touchEndX = event.originalEvent.changedTouches[0].pageX;
-//             this.touchSum = this.touchStartX - this.touchEndX;
-
-//             let absTouckSum = Math.abs(this.touchSum);
-    
-//             if (this.touchSum > 0 && absTouckSum > 50) {
-//                 this.moveRight();
-//             } else if (this.touchSum < 0 && absTouckSum > 50) {
-//                 this.moveLeft();
-//             }
-//         });
-//     }
-
-//     adaptiveDiapason(adaptives) {
-
-//         adaptives.forEach(item => {
-//             if(window.innerWidth <= item.width) {
-//                 this.SlideToShow = item.count
-//                 this.counter = item.count;
-//             } 
-//         });
-
-//     }
-
-//     updateCounterDisplay() {
-//         $('.car__control-text').html(`<span class="car-info__slider-count--span">${this.counter}</span> / ${this.counterItems}`);
-//     }
-// }
 
 function loading() {
     $(document).ready(function() {
@@ -323,4 +207,32 @@ function openMenu() {
         $(this).toggleClass('menu--mobile__item--active');
         subitemWrap.fadeToggle();
     });
+}
+
+function tabsControl() {
+    $("#cargosContent").show();
+    $(".user__tab").on("click", function () {
+        var tabId = $(this).attr("id");
+        var contentId = tabId.replace("Tab", "Content");
+
+        $(".user__content").hide();
+        $("#" + contentId).fadeIn();
+
+        Slider(
+            $('.reviews__track'),
+            $('.reviews__slider'),
+            $('.__prev'),
+            $('.__next'),
+            $('.reviews__block'),
+            2,
+            1,
+            30,
+            [{
+                width: '768',
+                count: '1'
+            }, ],
+            $('.reviews__track')
+        );
+
+    })
 }
