@@ -2,10 +2,11 @@ class Overlay {
 
     constructor(overlay) {
         this.overlay = $(overlay);
-        this.openBtn = $(overlay + ' .overlay__open')
+        this.openBtn = $(overlay + '--open')
         this.closeBtn = $(overlay + ' .overlay__close')
 
         this.init();
+        console.log(this.openBtn)
     }
 
     init() {
@@ -185,9 +186,9 @@ function loading() {
 function openFilter() {
     $('.filter__btn-setting').on('click', function (event) {
         if ($(window).width() < 1190) {
-            $('.filter__form--mobile').fadeIn().css("display", "grid");
+            $('.filter__form--mobile').fadeToggle().css("display", "grid");
         } else {
-            $('.filter__extra-inputs').fadeIn().css("display", "grid");
+            $('.filter__extra-inputs').fadeToggle().css("display", "grid");
         }
     })
 }
