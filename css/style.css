@@ -2553,6 +2553,52 @@ input[type=file] {
     padding: 25px;
   }
 }
+.cargos__block-control {
+  border-top: 1px solid #EDEDED;
+}
+.cargos__block-control-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+}
+@media (max-width: 1600px) {
+  .cargos__block-control-wrap {
+    padding: calc(20px + 5 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .cargos__block-control-wrap {
+    padding: 25px;
+  }
+}
+@media (max-width: 525px) {
+  .cargos__block-control-wrap {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 25px;
+  }
+}
+.cargos__block-control-btn {
+  padding: 20px 55px;
+  border: 1px solid #DBDBDB;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.cargos__block-control-btn:hover {
+  border-color: #5BB318;
+  background: #5BB318;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
 .cargos__block-price {
   text-align: right;
 }
@@ -3964,11 +4010,42 @@ input[type=file] {
     height: 800px;
   }
 }
+.cars__block-control {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #EDEDED;
+}
+.cars__block-control-wrap {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 25px;
+}
+@media (max-width: 1600px) {
+  .cars__block-control-wrap {
+    padding-right: calc(20px + 5 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .cars__block-control-wrap {
+    padding-right: 25px;
+  }
+}
+@media (max-width: 1600px) {
+  .cars__block-control-wrap {
+    padding-left: calc(20px + 5 * (100vw - 320px) / (1600 - 320));
+  }
+}
+@media (min-width: 1600px) {
+  .cars__block-control-wrap {
+    padding-left: 25px;
+  }
+}
 .cars__block-name {
   border-bottom: 1px solid #EDEDED;
   font-size: 22px;
   font-weight: 600;
   line-height: 150%;
+  display: block;
 }
 @media (max-width: 1600px) {
   .cars__block-name {
