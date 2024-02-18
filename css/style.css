@@ -4870,12 +4870,12 @@ input[type=file] {
 }
 @media (max-width: 1600px) and (max-width: 767px) {
   .recovery__title {
-    font-size: calc(24px + 8.7 * (100vw - 320px) / 1600);
+    font-size: calc(20px + 16.7 * (100vw - 320px) / 1600);
   }
 }
 @media (max-width: 1600px) and (min-width: 767px) {
   .recovery__title {
-    font-size: calc(24px + 4 * 100vw / 1600);
+    font-size: calc(20px + 8 * 100vw / 1600);
   }
 }
 @media (min-width: 1600px) {
