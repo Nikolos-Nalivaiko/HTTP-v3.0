@@ -978,19 +978,23 @@ input[type="file"] {
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        width: 1020px;
+        @include adaptive-value('width', 1020, 290, 320);
         border-radius: 20px; 
         box-shadow: 0px 0px 20px 0px rgba(105, 105, 105, 0.15);
     }
     &__headline {
-        font-size: 32px;
+        @include adaptive-font(32, 26);
         font-weight: 700;
+        line-height: 145%;
     }
     &__header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 35px 45px;
+        @include adaptive-value('padding-top', 35, 20, 320);
+        @include adaptive-value('padding-bottom', 35, 20, 320);
+        @include adaptive-value('padding-right', 45, 20, 320);
+        @include adaptive-value('padding-left', 45, 20, 320);
         border-bottom: 1px solid #DBDBDB;
     }
     &__close {
@@ -1004,11 +1008,14 @@ input[type="file"] {
         }
     }
     &__form {
-        padding: 35px 45px;
+        @include adaptive-value('padding-top', 35, 20, 320);
+        @include adaptive-value('padding-bottom', 35, 20, 320);
+        @include adaptive-value('padding-right', 45, 20, 320);
+        @include adaptive-value('padding-left', 45, 20, 320);
     }
     &__input {
         &-text {
-            padding: 20px;
+            @include adaptive-value('padding', 20, 15, 320);
             border-radius: 10px;
             border: 1px solid #DBDBDB;
             width: 100%;
@@ -1024,8 +1031,9 @@ input[type="file"] {
     }
     &__star {
         &-label {
-            margin-top: 45px;
+            @include adaptive-value('margin-top', 45, 30, 320);
             font-size: 18x;
+            line-height: 145%;
         }
     }
     &__stars {
@@ -1037,9 +1045,16 @@ input[type="file"] {
         border: 1px solid #DBDBDB;
         transition: .3s;
         font-weight: 600;
-        margin-top: 45px;
+        @include adaptive-value('margin-top', 45, 30, 320);
+        @media (max-width: $tablet) {
+            width: 100%;
+            text-align: center;
+            padding-right: 0;
+            padding-left: 0;
+        }
         &:hover {
             background:$accentColor;
+            border-color: $accentColor;
             color: #fff;
             transition: .3s;
         }
@@ -1077,16 +1092,32 @@ input[type="file"] {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 525px) {
+        padding-right: 20px;
+    }
+    &__image {
+        background:url(../img/403.svg);
+        @include adaptive-value('width', 715, 200, 768);
+        height: 545px;
+        background-repeat: no-repeat;
+        @media (max-width: $tablet) {
+            display: none;
+        }
+    }
     &__text {
         max-width: 500px;
     }
     &__description {
         color: $submainColor;
         line-height: 150%;
-        margin-top: 30px;
+        @include adaptive-value('margin-top', 30, 10, 320);
         margin-bottom: 30px;
     }
     &__btn {
+        @media (max-width: 525px) {
+            display: block;
+            text-align: center;
+        }
         display: inline-block;
         padding: 20px 65px;
         border-radius: 10px;
@@ -1104,6 +1135,10 @@ input[type="file"] {
             border: 1px solid #DBDBDB;
             color:$mainColor;
             margin-left: 30px;
+            @media (max-width: 525px) {
+                margin-left: 0;
+                margin-top: 20px;
+            }
             &:hover {
                 background: $mainColor;
                 color: #fff;
@@ -1167,7 +1202,7 @@ input[type="file"] {
     }
     &__block {
         transition: .3s;
-        border: 1px solid #fff;
+        border: 1px solid #DBDBDB;
         border-radius: 10px;
         box-shadow: 0px 0px 15px 0px rgba(140, 140, 140, 0.15);
         &-headline {
@@ -1249,6 +1284,35 @@ input[type="file"] {
             display: flex;
             align-items: center;
             justify-content: space-between;
+        }
+        &-control {
+            border-top: 1px solid #EDEDED;
+            &-wrap {
+                @include adaptive-value('padding', 25, 20, 320);
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: space-between;
+                column-gap: 30px;
+                @media (max-width: 525px) {
+                    grid-template-columns: repeat(1, 1fr);
+                    row-gap: 25px;
+                }
+            }
+            &-btn {
+                padding: 20px 55px;
+                border: 1px solid #DBDBDB;
+                border-radius: 10px;
+                text-align: center;
+                font-weight: 600;
+                cursor: pointer;
+                transition: .2s;
+                &:hover {
+                    border-color: $accentColor;
+                    background: $accentColor;
+                    color: #fff;
+                    transition: .2s;
+                }
+            }
         }
         &-price {
             text-align: right;
@@ -1492,6 +1556,54 @@ input[type="file"] {
 }
 
 .user {
+    &__setting {
+        &-arrows {
+            margin-top: 25px;
+            display: none;
+            @media (max-width: $big-tablet) {
+                display: flex;
+            }   
+        }
+        &-slider {
+            overflow: hidden;
+            margin-top: 65px;
+            @include adaptive-value('margin-top', 65, 25, 320);
+        }
+        &-form {
+            @include adaptive-value('margin-top', 65, 45, 320);
+        }
+        &-nav-block {
+            @include adaptive-value('padding', 30, 20, 320);
+            border-radius: 10px;
+            border: 1px solid #DBDBDB;
+            display: flex;
+            align-items: center;
+            transition: .3s;
+            &-icon {
+                @include adaptive-font(50, 45);
+                color: #C8C8C8;
+                margin-right: 35px;
+                transition: .3s;
+            }
+            &-title {
+                @include adaptive-font(20, 18);
+                font-weight: 600;
+            }
+            &:hover {
+                transition: .3s;
+                border-color: $accentColor;
+            }
+            &:hover &-icon {
+                transition: .3s;
+                color: $accentColor;
+            }
+        }
+        &-track {
+            display: flex;
+            align-items: center;
+            transition: .8s;
+        }
+    }
     &__block {
         width: 100%;
         grid-column: span 2;
@@ -1572,7 +1684,7 @@ input[type="file"] {
             color: $accentColor;
         }   
         &-name {
-            @include adaptive-font(20, 18);
+            font-size: 20px;
             font-weight: 700;
             line-height: 150%;
         }
@@ -1589,36 +1701,57 @@ input[type="file"] {
     &__about {
         display: flex;
         align-items: center;
+        @media (max-width: $tablet) {
+            flex-direction: column;
+            align-items: start;
+        }
         &-title {
-            font-size: 34px;
+            @include adaptive-font(34, 32);
             font-weight: 700;
             line-height: 150%;
         }
         &-subtitle {
             color: $submainColor;
             margin-top: 5px;
-            font-size: 18px;
+            @include adaptive-font(18, 16);
         }
         &-image {
-            width: 135px;
-            height: 135px;
+            @include adaptive-value('width', 135, 115, 320);
+            @include adaptive-value('height', 135, 115, 320);
             border-radius: 100px;
             object-fit: cover;
             margin-right: 35px;
+            @media (max-width: $big-tablet) {
+                border-radius: 15px;
+            }
+            @media (max-width: $tablet) {
+                margin-bottom: 25px;
+            }
         }
         &-icon {
             font-size: 35px;
             color: $accentColor;
+            @media (max-width: $big-tablet) {
+                margin-bottom: 20px;
+            }
         }
     }
     &__header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-bottom: 30px;
+        @include adaptive-value('padding-bottom', 30, 20,320);
         border-bottom: 1px solid #DBDBDB;
+        @media (max-width: $big-tablet) {
+            flex-direction: column-reverse;
+            align-items: start;
+        }
     }
     &__contacts {
+        @media (max-width: $big-tablet) {
+            flex-direction: column;
+            align-items: start;
+        }
         display: flex;
         align-items: center;
         margin-top: 30px;
@@ -1630,42 +1763,77 @@ input[type="file"] {
             font-size: 35px;
             color: $accentColor;
         }
+        &-text {
+            display: flex;
+            align-items: center;
+            margin-left: 25px;
+            @media (max-width: $tablet) {
+                flex-direction: column;
+                align-items: start;
+            }
+        }
         &-title {
-            font-size: 24px;
+            @include adaptive-font(24, 20);
             font-weight: 600;
             padding-right: 20px;
             border-right: 1px solid #DBDBDB;
             margin-right: 20px;
-            margin-left: 25px;
+            @media (max-width: $tablet) {
+                border: none;
+                margin-right: 0;
+                margin-left: 0;
+                padding-right: 0;
+                margin-bottom: 8px;
+            }
         }
         &-subtitle {
             color: $submainColor;
         }
         &:nth-child(2) {
-            margin-left: 115px;
+            @include adaptive-value('margin-left', 115, 50, 992);
+            @media (max-width: $big-tablet) {
+                margin-left: 0;
+                margin-top: 30px;
+            }
         }
     }
     &__panel {
-        margin-top: 95px;
+        @include adaptive-value('margin-top', 95, 55, 320);
+        @include adaptive-value('margin-bottom', 65, 55, 320);
         &-headline {
             font-weight: 700;
             font-size: 36px;
         }
+        &-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @media (max-width: $tablet) {
+                flex-direction: column;
+                align-items: start;
+            }
+        }
+        &-arrows {
+            display: none;
+            @media (max-width: $big-tablet) {
+                display: flex;
+            }
+        }
     }
     &__tabs {
-        margin-top: 50px;
-        margin-bottom: 65px;
-        &--single {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            column-gap: 30px;
+        overflow: hidden;
+        @include adaptive-value('margin-top', 50, 25,320);
+        &-track {
+            display: flex;
+            align-items: center;
+            transition: .8s;
         }
     }
     &__tab {
         cursor: pointer;
         border-radius: 10px;
         border: 1px solid #DBDBDB;
-        padding: 30px;
+        @include adaptive-value('padding', 30, 25, 320);
         display: inline-block;
         transition: .3s;
         &:hover {
@@ -1690,14 +1858,20 @@ input[type="file"] {
         }
     }
     &__content {
+        display: none;
         &-headline {
             font-size: 36px;
             font-weight: 700;
+            line-height: 150%;
         }
         &-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            @media (max-width: $big-tablet) {
+                flex-direction: column;
+                align-items: start;
+            }
             &-btn {
                 cursor: pointer;
                 padding: 20px 55px;
@@ -1705,40 +1879,58 @@ input[type="file"] {
                 border-radius: 10px;
                 border: 1px solid #DBDBDB;
                 transition: .3s;
+                @media (max-width: $big-phone) {
+                    width: 100%;
+                    text-align: center;
+                }
                 &:hover {
                     background: $accentColor;
                     border-color: $accentColor;
                     color: #fff;
                     transition: .3s;
                 }
+                @media (max-width: $big-tablet) {
+                    margin-top: 25px;
+                }
             }
         }
     }
     &__reviews {
         &-slider {
-            margin-top: 60px;
             margin-bottom: 65px;
         }
     }
     &__current-review {
-        margin-top: 65px;
+        @include adaptive-value('margin-top', 65, 25, 320);
         border-radius: 10px;
         border: 1px solid #DBDBDB;
-        padding: 35px 30px;
+        @include adaptive-value('padding-top', 35, 20, 320);
+        @include adaptive-value('padding-bottom', 35, 20, 320);
+        @include adaptive-value('padding-right', 30, 20, 320);
+        @include adaptive-value('padding-left', 30, 20, 320);
         &-header {
             display: flex;
             align-items: center;
+            @media (max-width: $tablet) {
+                flex-direction: column;
+                align-items: start;
+            }
+        }
+        &-text {
+            @media (max-width: $tablet) {
+                margin: 20px 0;
+            }
         }
         &-image {
-            width: 95px;
-            height: 95px;
+            @include adaptive-value('width', 95, 80, 320);
+            @include adaptive-value('height', 95, 80, 320);
             border-radius: 100px;
             border: 1px solid #DBDBDB;
             margin-right: 25px;
         }
         &-title {
             font-weight: 700;
-            font-size: 24px;
+            @include adaptive-font(24, 20);
             line-height: 150%;
         }
         &-subtitle {
@@ -1751,10 +1943,14 @@ input[type="file"] {
             background: #DBDBDB;
             margin-right: 55px;
             margin-left: 55px;
+            @media (max-width: $tablet) {
+                display: none;
+            }
         }
         &-descript {
             line-height: 150%;
-            margin: 35px 0;
+            @include adaptive-value('margin-top', 35, 30, 320);
+            @include adaptive-value('margin-bottom', 35, 25, 320);
             color: $submainColor;
         }
     }
@@ -1838,7 +2034,7 @@ input[type="file"] {
     &__block {
         border-radius: 10px;
         box-shadow: 0px 0px 15px 0px rgba(140, 140, 140, 0.15);
-        border: 1px solid #fff;
+        border: 1px solid #DBDBDB;
         transition: .3s;
         &-image {
             width: 100%;
@@ -1852,12 +2048,25 @@ input[type="file"] {
             object-fit: cover;
             border-radius: 10px 10px 0 0;
         }
+        &-control {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-top: 1px solid #EDEDED;
+            &-wrap {
+                @include adaptive-value('padding-right', 25, 20, 320);
+                @include adaptive-value('padding-left', 25, 20, 320);
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                row-gap: 25px;
+            }
+        }
         &-name {
             @include adaptive-value('padding', 25, 20, 320);
             border-bottom: 1px solid #EDEDED;
             font-size: 22px;
             font-weight: 600;
             line-height: 150%;
+            display: block;
         }
         &-middle {
             padding-top: 20px;
@@ -1949,7 +2158,7 @@ input[type="file"] {
         }
     }
     &__subslider {
-        margin-top: 45px;
+        @include adaptive-value('margin-top', 45, 25, 320);
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
@@ -2092,12 +2301,16 @@ input[type="file"] {
     &__blocks {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        @media (max-width: $tablet) {
+            grid-template-columns: repeat(1, 1fr);
+        }
         column-gap: 30px;
-        margin-top: 55px;
+        row-gap: 30px;
+        @include adaptive-value('margin-top', 55, 45, 320);
     }   
     &__block {
         display: inline-block;
-        padding: 35px;
+        @include adaptive-value('padding', 35, 20, 320);
         border-radius: 10px;
         border: 1px solid #DBDBDB;
         display: flex;
@@ -2113,7 +2326,7 @@ input[type="file"] {
         }
     }
     &__icon {
-        font-size: 65px;
+        @include adaptive-font(65, 50);
         color: #C8C8C8;
         margin-right: 45px;
         transition: .3s;
@@ -2121,7 +2334,7 @@ input[type="file"] {
     &__title {
         line-height: 150%;
         font-weight: 700;
-        font-size: 28px;
+        @include adaptive-font(28, 24);
     }
     &__subtitle {
         color: $submainColor;
@@ -2300,3 +2513,5 @@ input[type="file"] {
         }
     }
 }
+
+

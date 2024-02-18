@@ -62,35 +62,38 @@
 
         <header class="header">
             <div class="__container header__wrapper">
-                <a href=""><img class="navbar__logo" src="img/logo.svg"></a>
+                <img src="img/logo.svg" class="navbar__logo">
                 <nav class="navbar">
                     <ul class="navbar__list">
-                        <li class="navbar__item"><a href="index.html">Головна</a></li>
-                        <li class="navbar__item navbar__dropdown-container">
+                        <li class="navbar__item"><a href="/">Головна</a></li>
+                        <li class="navbar__item">
+                            <div class="navbar__dropdown-container">
                                 <p class="navbar__dropdown-headline">Вантажі</p>
                                 <div class="navbar__dropdown-content">
-                                    <a href="cargos.html">Біржа вантажів</a>
-                                    <a href="new-cargo.html">Додати вантаж</a>
+                                    <a href="#">Біржа вантажів</a>
+                                    <a href="#">Додати вантаж</a>
                                 </div>
+                            </div>
                         </li>
-                        <li class="navbar__item navbar__dropdown-container">
+                        <li class="navbar__item">
+                            <div class="navbar__dropdown-container">
                                 <p class="navbar__dropdown-headline">Транспорт</p>
                                 <div class="navbar__dropdown-content">
-                                    <a href="cars.html">Біржа транспорту</a>
-                                    <a href="new-car.html">Додати транспорт</a>
+                                    <a href="#">Біржа транспорту</a>
+                                    <a href="#">Додати транспорт</a>
                                 </div>
-                        </li>
-                        <li class="navbar__item"><a class="navbar__item-btn" href="sign-in.html">Увійти</a></li>
-                        <!-- <a href="" class="navbar__user">
-                            <img class="navbar__user-image" src="img/user.jpg" alt="">
-                            <div class="navbar__user-text">
-                                <p class="navbar__user-subtitle">Фізична особа</p>
-                                <p class="navbar__user-headline">Ковальчук О. І.</p>
                             </div>
-                        </a> -->
+                        </li>
+                        <!-- <li class="navbar__item"><a class="navbar__item-btn" href="">Увійти</a></li> -->
+                        <a href="" class="navbar__user">
+                            <img class="navbar__user-image" src="../img/user.jpg" alt="">
+                            <div class="navbar__user-text">
+                                <p class="navbar__user-headline">Ковальчук О. І.</p>
+                                <p class="navbar__user-subtitle">Фізична особа</p>
+                            </div>
+                        </a>
                     </ul>
                 </nav>
-                <p class="navbar__menu-start __icon-menu "></p>
             </div>
         </header>
 
@@ -127,7 +130,7 @@
                         </div>
 
                         <button type="submit" class="input__btn">Увійти</button>
-                        <a href="recovery-select.php" class="input__btn input__btn-recover">Відновити дані</a>
+                        <a href="recovery-select.html" class="input__btn input__btn-recover">Відновити дані</a>
 
                         <p class="input__descrition-sign-in">Не маєте акаунту ?<a href="select.html"> Створіть його</a></p>
 
