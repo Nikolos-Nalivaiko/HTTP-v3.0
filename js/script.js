@@ -2,7 +2,7 @@ class Overlay {
 
     constructor(overlay) {
         this.overlay = $(overlay);
-        this.openBtn = $(overlay + '--open')
+        this.openBtn = $('.overlay--open')
         this.closeBtn = $(overlay + ' .overlay__close')
 
         this.init();
@@ -209,7 +209,7 @@ function openMenu() {
 }
 
 function tabsControl() {
-    $("#cargosContent").show();
+    $("#settingContent").show();
     $(".user__tab").on("click", function () {
         var tabId = $(this).attr("id");
         var contentId = tabId.replace("Tab", "Content");

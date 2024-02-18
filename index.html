@@ -12,6 +12,17 @@
 
 <body>
 
+    <div class="overlay-rules" id="rules">
+        <div class="overlay-rules__body">
+            <p class="overlay-rules__title">Вас вітає платформа HTTP - Logistic service</p>
+            <p class="overlay-rules__subtitle">Наша веб-платформа — це місце, де кожен крок і дія важливі. Ми докладаємо максимум зусиль, щоб забезпечити зручність, надійність та безпеку наших користувачів. Тому, ми розробили спеціальні правила використання, які допомагають створити відмінне враження та забезпечити комфортну взаємодію для всіх.</p>
+           <div class="overlay-rules__btns">
+                <p class="overlay-rules__btn overlay-rules__btn--accept">Згоден з правилами</p>
+                <a href="" class="overlay-rules__btn">Переглянути правила</a>
+           </div>
+        </div>
+    </div>
+
     <div class="menu--mobile">
         <div class="menu--mobile__content __container">
             <ul class="menu--mobile__list">
@@ -333,6 +344,25 @@
     );
     loading();
     openMenu();
+
+    let close = $('.overlay-rules__btn--accept');
+    let popup = $('.overlay-rules');
+    if (!sessionStorage.getItem('pageReloaded')) {
+
+        localStorage.setItem('popupOpened', 'false');
+        sessionStorage.setItem('pageReloaded', 'true');
+    }
+
+    if (localStorage.getItem('popupOpened') !== 'true') {
+        popup.show();
+
+        localStorage.setItem('popupOpened', 'true');
+
+        close.click(function() {
+            popup.hide();
+        });
+    }
+
     </script>
 </body>
 

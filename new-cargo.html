@@ -61,8 +61,8 @@
     <div class="overlay overlay--success">
         <div class="overlay__body">
             <p class="overlay__icon overlay__icon--success __icon-success"></p>
-            <p class="overlay__headline">Профіль створено</p>
-            <p class="overlay__description">Ваш профіль було успішно створено</p>
+            <p class="overlay__headline">Вантаж створено</p>
+            <p class="overlay__description">Вантаж успішно додано до біржи вантажів</p>
             <p class="overlay__btn overlay__close">Закрити</p>
         </div>
     </div>
@@ -118,7 +118,7 @@
                 <p class="main__subheadline">Вкажіть необхідні дані, визначте умови перевезення та отримайте доступ до
                     широкого спектру транспортних рішень</p>
 
-                <form class="sign-up__form" action="" method="post" enctype="multipart/form-data">
+                <form class="sign-up__form" action="" onsubmit="event.preventDefault()" method="post" enctype="multipart/form-data">
 
                     <div class="input__wrapper">
                         <p class="input__icon __icon-cargo-name"></p>
@@ -263,7 +263,7 @@
                         <label for="checkbox" class="input__checkbox-label">Терміновий вантаж</label>
                     </div>
 
-                    <button type="submit" class="input__btn">Додати вантаж</button>
+                    <button type="submit" class="input__btn overlay--open">Додати вантаж</button>
 
                 </form>
             </section>
@@ -301,7 +301,7 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script>
     const OverlayP = new Overlay(
-        '.overlay'
+        '.overlay--success'
     );
     loading();
     openMenu();
