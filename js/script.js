@@ -185,8 +185,8 @@ function loading() {
 
 function openFilter() {
     $('.filter__btn-setting').on('click', function (event) {
-        if ($(window).width() < 1190) {
-            $('.filter__form--mobile').fadeToggle().css("display", "grid");
+        if ($(window).width() <= 768) {
+            $('.filter__form').fadeToggle().css("display", "block");
         } else {
             $('.filter__extra-inputs').fadeToggle().css("display", "grid");
         }
@@ -234,4 +234,8 @@ function tabsControl() {
         );
 
     })
+}
+
+function phoneMask() {
+    $('#phone').mask("+38 (999) 999-99-99")
 }
